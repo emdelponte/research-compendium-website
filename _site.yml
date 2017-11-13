@@ -1,0 +1,21 @@
+name: "my-website"
+output_dir: "."
+navbar:
+  title: "Pesquisa Reproduzível no R"
+  left:
+    - text: "Introdução"
+      icon: fa fa-home 
+      href: index.html
+    - text: "Datasets"
+      icon: fa fa-table 
+      href: data.html
+    - text: "Data analysis"
+      icon: fa fa-file-code-o 
+      href: code.html
+    - text: "Manuscript"
+      icon: fa fa-file-text-o 
+      href: article.html 
+      
+  right:
+    - icon: fa-github-square 
+      href: https://github.com/emdelponte/FGSC

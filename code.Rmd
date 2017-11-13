@@ -1,0 +1,413 @@
+---
+title: ''
+output:
+  html_document:
+    css: style.css
+    df_print: paged
+    theme: flatly
+    highlight: default
+    toc: true
+    toc_float: 
+     collapsed: true
+     smooth_scroll: false
+---
+
+
+## Introduction
+
+We conducted a two-stage multi-treatment or network meta-analysis for the simultaneous analysis of all treatments of interest and which co-occur in the same trial. This approach allows direct comparisons of treatments with each other, and takes into account all the correlations (see Madden et al. 2016 for more details). 
+
+The most common form of effect size used in traditional meta-analysis are based on the contrasts of the treatment of interest with a common reference (e.g. control treatment), such as mean difference, response ratio, etc. This is known as the conditional modeling approach, also named contrast-based meta-analysis. An alternative and simpler approach, which is commonly used in plant pathology, is to fit a two-way linear mixed model directly to the treatment means. This is know as the unconditional modeling approach or arm-based meta-analysis. 
+
+
+## Import data
+
+Let's first import the data and load the packages needed for the analyses.
+
+```{r}
+fhb_sev <- read.csv("fhb_sev.csv", sep = ",", h = T)
+fhb_yield <- read.csv("fhb_yield.csv", sep = ",", h = T)
+```
+
+
+```{r message=FALSE, warning=FALSE, paged.print=FALSE}
+# Load packages 
+library(tidyverse)
+library(metafor)
+library(ggthemes)
+library(cowplot)
+library(scales)
+library(knitr)
+library(nloptr)
+library(minqa)
+library(DT)
+```
+
+
+## Effect-sizes
+
+Here, we used the latter approach fitted directly to the log of the means (for both FHB index and yield) for further obtaining the relative effect (control efficacy and yield response). For yield, we fitted the model directly to the mean yield of treatments to further estimate the yield response, or the difference (D) from using the fungicides. The D was calculated for each treatment within a study for plotting purposes, but the meta-analyitic estimate of D was obtained from the difference of the estimates by mixed model fitted directly to the treatment means.
+
+
+```{r}
+# log of FHB index
+fhb_sev$yi <- log(fhb_sev$sev)
+hist(fhb_sev$yi)
+
+# log of yield
+fhb_yield$yi <- log(fhb_yield$yield)
+hist(fhb_yield$yi)
+
+# difference (D) in yield between treatment and non-treated check
+fhb_yield$D <-fhb_yield$yield - fhb_yield$yield_check
+hist(fhb_yield$D)
+```
+
+
+## Sampling variance 
+
+Let's create the sampling variance variables `vi` for the respective effect-sizes. 
+
+```{r}
+# Sampling variance for the log of FHB index
+fhb_sev$vi <- with(fhb_sev, V_sev / (n * sev^2))
+
+# Sampling variance for the log of yield
+fhb_yield$vi <- with(fhb_yield, V_yield / (n * yield^2))
+
+# Sampling variance for yield
+fhb_yield$vi2 <- fhb_yield$V_yield/fhb_yield$n # multivariate approach
+```
+
+## Treatments
+
+There are tree fungicides of interest in this study:
+
+- Tebuconazole
+- Propiconazole
+- Carbendazim
+
+Most of them were used as a single application but Tebuconazole was tested as single or sequential application. Let's get the number of entries per fungicide. The `AACHECK` refers to the plots where no fungicide was applied, or the control.
+
+```{r}
+table(fhb_sev$AI, fhb_sev$n_spray2)
+```
+
+Let's create another variable to identify each of these four treatments. We will omit CARB applied once because there are only three entries. 
+
+```{r}
+library(tidyverse)
+fhb_sev <- fhb_sev %>% 
+  mutate(AI_nspray2 = paste(AI, n_spray2,sep='_')) %>% 
+  filter(AI_nspray2 != "CARB_1") %>% 
+  filter(trial, length(trial)>1) 
+
+fhb_yield <- fhb_yield %>% 
+  mutate(AI_nspray2 = paste(AI, n_spray2,sep='_')) %>% 
+  filter(AI_nspray2 != "CARB_1") %>% 
+  filter(trial, length(trial)>1) 
+
+```
+
+Finally, we create a unique identifier for the treatment within a trial. This can be used further as random effects in the model.
+
+```{r}
+# ID variable for each entry within a trial
+
+fhb_sev$id <- 1:nrow(fhb_sev)
+fhb_yield$id <- 1:nrow(fhb_yield)
+```
+
+
+## Descriptive analysis
+
+We will get some summary information which may of use to describe the dataset when writing the material and methods and results section of the paper.
+
+```{r}
+# Number of entries by fungicide and number of sprays
+table(fhb_yield$AI, fhb_yield$n_spray2)
+
+# Number of unique trials
+length(unique(fhb_yield$trial))
+
+# Number of unique studies
+length(unique(fhb_yield$study))
+
+# Number of trials by year
+fhb_trial <- fhb_yield %>% 
+  group_by(trial) %>% 
+  filter(row_number() ==1)
+
+data.frame(table(fhb_trial$year))
+
+nrow(table(fhb_trial$year))
+
+# Number of trial by location
+data.frame(table(fhb_trial$location))
+
+# Number of trials by publication type
+data.frame(table(fhb_trial$publication))
+
+# Number of trials by state
+data.frame(table(fhb_trial$state))
+
+# n. of entries with D value lower than zero
+negat_D <- fhb_yield %>% 
+  filter(D < 0)
+```
+
+
+We also want to check whether the difference in means (D) can be expressed in absolute rather than relative terms. The former is indicated for situations in which the coefficient of variation for the response variable in the check treatment is not too high (Paul et al. 2008)
+
+```{r eval=FALSE, include=FALSE}
+# CV for FHB index
+## All entries
+cv_index_all <- (sd(fhb_sev$sev)/mean(fhb_sev$sev))*100
+
+
+## For control only
+cv_index_check <- (sd(fhb_sev$sev_check)/mean(fhb_sev$sev_check))*100
+
+
+### CV for yield
+
+## All entries
+cv_yld_all <- (sd(fhb_yield$yield)/mean(fhb_yield$yield))*100
+
+
+## For control only
+cv_yld_check <- (sd(fhb_yield$yield_check)/mean(fhb_yield$yield_check))*100
+
+```
+
+We can see that CV was high for FHB index, but much lower for yield. It is safer then to work with the absolute means difference for yield than FHB index, which will also require log-transformation.
+
+## Meta-analysis
+
+
+### Control efficacy
+
+Let's fit an arm-based model using the `rma.mv` function of metafor to get the estimates for each treatment.
+
+```{r, message=FALSE, warning=FALSE}
+fhb_mv_AI <- rma.mv(yi, vi, 
+                    mods = ~ AI_nspray2, 
+                    method="ML",
+                    random = list(~ AI_nspray2 | trial, ~1 | id), 
+                    struct="UN", data=fhb_sev)
+
+```
+
+Let's see the summary ouput provided by this function. Note that the intercept is the control treatment and all treatments differed significantly from the control based on the very low P-values.
+
+```{r}
+fhb_mv_AI
+```
+
+We can set linear contrasts between treatments of interest and get the P-valued using the `anova` function. 
+
+```{r}
+anova(fhb_mv_AI, L=rbind(c(0,1,-1,0,0), 
+                         c(0,0,-1,1,0),
+                         c(0,0,-1,0,1),
+                         c(0,0,0,-1,1)))  
+
+```
+
+Let's back-transform (exponential) the estimated mean (and respective 95%CIs) difference of the logs to obtain the response ratio, which is further expressed as percent reduction in FHB index relative to the check treatment (control efficacy) for each fungicide. We then prepare the data for plotting purposes.
+
+```{r}
+results_AI <- data.frame(cbind((1-exp(fhb_mv_AI$b))*100, 
+                              (1-exp(fhb_mv_AI$ci.lb))*100,
+                              (1-exp(fhb_mv_AI$ci.ub))*100))
+
+treat <- c("Check", "CARB2x", "PROP2x", "TEBU1x", "TEBU2x")
+efficacy <- tbl_df(results_AI)
+efficacy$treat <- treat
+efficacy$se <- fhb_mv_AI$se
+colnames(efficacy) <- c("Mean", "CIsup", "CIinf", "Treatment", "SE")
+efficacy
+```
+
+We can visualize this quickly, but we omit the check treatment.
+
+```{r}
+efficacy %>% 
+  filter(Treatment != "Check") %>% 
+  ggplot(aes(Treatment, Mean))+
+  geom_point(aes(size=1/SE), shape=15)+
+  geom_linerange(aes(ymin = CIinf, ymax = CIsup))+
+  coord_flip()+
+  theme_grey()+
+  ylim(20,80)
+```
+
+
+#### Inconsistency: index
+
+In a network meta-analysis, it is important to check whether the results are consistent across the different designs. We included this variable manually in the original dataset and tested the interaction effect of treatments and design group.  
+
+
+```{r eval=FALSE, message=FALSE, warning=FALSE, include=FALSE}
+
+### Number of trials per design (cons_group)
+table(fhb_sev$cons_group)
+
+### Model testing interaction treat x design
+fhb_mv_AI_cons <- rma.mv(yi, vi, 
+                         mods = ~ AI_nspray2 * cons_group, 
+                         method="ML",
+                         random = ~ AI_nspray2 | trial/cons_group, 
+                         struct="UN", 
+                         data=fhb_sev)
+anova(fhb_mv_AI_cons, btt=7:10)
+
+```
+
+ 
+
+#### Moderators
+
+
+##### FHB index base
+
+
+```{r, message=FALSE, warning=FALSE}
+# create the binary variable (dis_press)
+fhb_sev$dis_press <- ifelse(as.numeric(fhb_sev$sev_check) >7.0, 2, 1)
+
+# summarize number of trials per category of dis_press
+table(fhb_sev$AI_nspray2, fhb_sev$dis_press)
+
+# Test effect of moderator 
+fhb_mv_AI_sev_check <- rma.mv(yi, vi, 
+                              mods = ~ AI_nspray2*factor(dis_press),
+                              method="ML",
+                              random = list(~ AI_nspray2 | trial, ~1 | id),
+                              struct="UN", 
+                              data=fhb_sev)
+
+# Contrast levels of moderators
+anova(fhb_mv_AI_sev_check,btt=7:10)
+
+```
+
+##### Yield base
+
+```{r, message=FALSE, warning=FALSE}
+
+# create binary variable (yield_class)
+summary(fhb_sev$yield_check) # Median = 2993; Mean = 2915
+fhb_sev$yield_class <- ifelse(fhb_sev$yield_check > 3000, 2, 1)
+
+# check number of trials per yield_class category
+table(fhb_sev$yield_class, fhb_sev$AI_nspray2)
+
+# test the effect of moderator
+fhb_mv_AI_yield_class <- rma.mv(yi, vi, 
+                                mods = ~ AI_nspray2*factor(yield_class),
+                                method="ML",
+                                random = list(~ AI_nspray2 | trial, ~1 | id), 
+                                struct="UN", 
+                                data=fhb_sev)
+
+anova(fhb_mv_AI_yield_class, btt=7:10) 
+
+```
+
+
+##### Year as continuous 
+
+```{r, message=FALSE, warning=FALSE}
+# Moderator year (continuous)
+# Number of entries by fungicide and year
+table(fhb_sev$AI_nspray2, fhb_sev$year)
+
+fhb_mv_AI_year <- rma.mv(yi, vi, 
+                         mods = ~ AI_nspray2*as.numeric(year), 
+                         method="ML",
+                         random =list(~ AI_nspray2 | trial, ~1 | id),
+                         struct="UN", 
+                         data=fhb_sev)
+
+anova(fhb_mv_AI_year, btt=7:10)
+
+```
+
+
+### Yield response: relative
+
+```{r}
+### AI_nspray2 (AI and number of sprays)
+
+fhb_mv_AI <- rma.mv(yi, vi, 
+                    mods = ~ AI_nspray2, 
+                    method="ML",random = list(~ AI_nspray2 | trial, ~1 | id), 
+                    struct="UN", data=fhb_yield)
+
+summary(fhb_mv_AI)
+
+results_I<- data.frame(cbind((exp(fhb_mv_AI$b)-1)*100, 
+                             (exp(fhb_mv_AI$ci.lb)-1)*100,
+                             (exp(fhb_mv_AI$ci.ub)-1)*100))
+
+results_I
+
+# Linear contrasts between treatments
+
+anova(fhb_mv_AI, L=rbind(c(0,1,-1,0,0), 
+                         c(0,0,1,-1,0),
+                         c(0,0,1,0,-1),
+                         c(0,0,0,-1,1))) 
+
+
+```
+
+### Yield response: absolute 
+
+```{r}
+### by fungicide treatment
+
+fhb_mv_AI_D <- rma.mv(yield, vi2,
+                      mods = ~ AI_nspray2, 
+                      method="ML",random = list(~ AI_nspray2 | trial, ~1 | id),                       struct="UN", 
+                      data=fhb_yield, 
+                      control = list(optimizer="nlm"))
+summary(fhb_mv_AI_D)
+
+
+# Linear contrasts between treatments
+
+anova(fhb_mv_AI_D, L=rbind(c(0,1,-1,0,0), 
+                         c(0,0,1,-1,0),
+                         c(0,0,1,0,-1),
+                         c(0,0,0,-1,1)))
+```
+
+
+#### Inconsistency
+
+```{r}
+
+### Groups were inclued directly in the spreadsheet
+table(fhb_yield$cons_group)
+
+
+### Model 
+fhb_mv_AI_cons <- rma.mv(yield, vi2, 
+                         mods = ~ AI_nspray2 * cons_group, 
+                         method="ML",
+                         random = ~ AI_nspray2 | trial/cons_group, 
+                         struct="UN", data=fhb_yield)
+
+summary(fhb_mv_AI_cons)
+
+results_I<- data.frame(cbind((exp(fhb_mv_AI$b)-1)*100, 
+                             (exp(fhb_mv_AI$ci.lb)-1)*100,
+                             (exp(fhb_mv_AI$ci.ub)-1)*100))
+results_I
+
+#anova(fhb_mv_AI_cons, btt=14:26) 
+
+```
+
