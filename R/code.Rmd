@@ -25,8 +25,8 @@ The most common form of effect size used in traditional meta-analysis are based 
 Let's first import the data and load the packages needed for the analyses.
 
 ```{r}
-fhb_sev <- read.csv("fhb_sev.csv", sep = ",", h = T)
-fhb_yield <- read.csv("fhb_yield.csv", sep = ",", h = T)
+fhb_sev <- read.csv("../data/fhb_sev.csv", sep = ",", h = T)
+fhb_yield <- read.csv("../data/fhb_yield.csv", sep = ",", h = T)
 ```
 
 

@@ -30,14 +30,14 @@ The data is in the tidy (long) format where each row represents a treatment (onl
 ### FHB index dataset 
 
 ```{r}
-fhb_sev <- read.csv("fhb_sev.csv", sep = ",", h = T)
+fhb_sev <- read.csv("../data/fhb_sev.csv", sep = ",", h = T)
 fhb_sev
 ```
 
 ### Wheat yield dataset
 
 ```{r}
-fhb_yield <- read.csv("fhb_yield.csv", sep = ",", h = T)
+fhb_yield <- read.csv("../data/fhb_yield.csv", sep = ",", h = T)
 fhb_yield
 ```
 

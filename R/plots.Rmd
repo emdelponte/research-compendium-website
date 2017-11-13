@@ -26,8 +26,8 @@ library(cowplot)
 The plots below were presented in the article.
 
 ```{r message=FALSE, warning=FALSE, include=FALSE, paged.print=FALSE}
-fhb_sev <- read.csv("fhb_sev.csv", sep = ",", h = T)
-fhb_yield <- read.csv("fhb_yield.csv", sep = ",", h = T)
+fhb_sev <- read.csv("../data/fhb_sev.csv", sep = ",", h = T)
+fhb_yield <- read.csv("../data/fhb_yield.csv", sep = ",", h = T)
 
 
 library(tidyverse)
