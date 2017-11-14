@@ -1,15 +1,5 @@
 ---
 title: ''
-output:
-  html_document:
-    css: style.css
-    df_print: paged
-    theme: flatly
-    highlight: default
-    toc: true
-    toc_float: 
-     collapsed: false
-     smooth_scroll: false
 ---
 
 

@@ -1,21 +1,33 @@
-name: "my-website"
-output_dir: "."
+name: ''
+output_dir: .
+output:
+  html_document:
+    css: style.css
+    theme: flatly
+    df_print: paged
+    lib_dir: site_libs
+    self_contained: no
+    highlight: default
+    toc: true
+    toc_float: 
+     collapsed: false
+     smooth_scroll: false
 navbar:
-  title: "Pesquisa Reproduzível no R"
+  title: Pesquisa Reproduzivel no R
   left:
-    - text: "Introdução"
-      icon: fa fa-home 
-      href: index.html
-    - text: "Datasets"
-      icon: fa fa-table 
-      href: data.html
-    - text: "Data analysis"
-      icon: fa fa-file-code-o 
-      href: code.html
-    - text: "Manuscript"
-      icon: fa fa-file-text-o 
-      href: article.html 
-      
+  - text: Introdução
+    icon: fa fa-home
+    href: index.html
+  - text: Datasets
+    icon: fa fa-table
+    href: data.html
+  - text: Data analysis
+    icon: fa fa-file-code-o
+    href: code.html
+  - text: Manuscript
+    icon: fa fa-file-text-o
+    href: article.html
   right:
-    - icon: fa-github-square 
-      href: https://github.com/emdelponte/pesquisa-reproduzivel-R
+  - icon: fa-github-square
+    href: https://github.com/emdelponte/pesquisa-reproduzivel-R
+

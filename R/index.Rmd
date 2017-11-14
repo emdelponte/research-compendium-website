@@ -1,40 +1,21 @@
----
-title: 'Pesquisa Reproduzível'
-output:
-  html_document:
-    css: style.css
-    df_print: paged
-    theme: flatly
-    highlight: default
-    toc: true
-    toc_float: 
-     collapsed: false
-     smooth_scroll: false
----
 
-
-```{r setup, include=FALSE}
-knitr::opts_chunk$set(echo = FALSE)
-```
 
 ## Definições
 
-A Pesquisa Reproduzível (PR) tem a ver com reprodutibilidade da pesquisa, que pode ser definida como:
+A Pesquisa Reproduzível (PR) tem a característica de reprodutibilidade, ou seja, a habilidade de um pesquisador em obter os resultados de um estudo prévio usando os mesmos materiais (dados) e métodos (estatística) da pesquisa original. Portanto, a condição *sine qua non* para que isso seja possível é que o pesquisador independente tenha a) acesso aos dados e b) saiba detalhes de como a análise foi feita. 
 
-> *Habilidade de um pesquisador em obter os resultados de um estudo prévio usando os mesmos materiais (dados) e métodos (estatística) da pesquisa original*.
+Em ciência, essa deve ser uma condição mínima  para que um resultado tenha veracidade. Parte-se do princípio de que os resultados de uma pesquisa quando publicados em revistas científicas com corpo editorial tenham sido obtidos segundo os princípios e a ética científica. No entanto, os editores e revisores, quase sempre, não tem como verificar se todos os passos do trabalho, especialmente a anállise dos dados, foram executados corretamente, já que recebem apenas uma parte do "produto final", ou seja, o artigo científico. Esse deve conter as informações mínimas necessárias descritas de maneira clara o suficiente para que o trabalho seja avaliado pelos pares.
 
-A condição *sine qua non* para que isso seja possível é que o pesquisador independente tenha: 
 
-- acesso aos dados 
-- saiba detalhes de como a análise foi feita
+O termo reprodutibilidade é bastante atual e pode ter várias definições dependendo do contexto. Diversas matérias na mídia acadêmica comentam sobre a atual **crise de reprodutibilidade na ciência** a qual é reconhecida principalmente pelos pesquisadores. O que seria esse fenômeno? A tal crise se refere a um tipo de reprodutibilidade, diferente do que será tratado aqui. É reprodutibilidade **inferencial**, que pode ser chamada de **replicabilidade**. Definindo, é a capacidade de obter um mesmo resultado ou conclusão de uma pesquisa anterior com a condução de uma nova pesquisa, ou seja, novos dados obtidos para responder uma mesma questão. 
 
-Em ciência, essa deve ser uma condição mínima necessária para que um resultado seja acreditado e informativo. Parte-se do princípio que os resultados de uma pesquisa quando publicados em revistas científicas com corpo editorial, tenham sido obtidos segundo os princípios, métodos e ética científica. No entanto, os editores e revisores, quase sempre, não tem como verificar se todos os passos foram executados corretamente, já que recebem apenas o "produto final", ou seja, o artigo científico, o qual deve conter as informações mínimas necessárias para que o trabalho seja avaliado. 
+## Crise de reprodutibilidade
 
-O termo reprodutibilidade é bastante atual e pode ter várias definições dependendo do contexto. Diversas matérias na mídia acadêmica que comentam sobre a atual **crise de reprodutibilidade na ciência** a qual é reconhecida principalmente pelos pesquisadores. O que seria esse fenômeno? A tal crise se refere a um tipo de reprodutibilidade que é a **inferencial**, também chamada de **replicabilidade**, ou seja,a capacidade de obte um mesmo resultado ou conclusão de uma pesquisa anterior com a condução de uma nova pesquisa, ou seja, novos dados obtidos para responder uma mesma questão. 
+A  crise de reprodutibilidade está associada aos casos não tão incomuns de experimentos (área farmacêutica, por exemplo) que são conduzidos para avaliar a eficácia de algum produto e, que, por algum motivo, novos experimentos não confirmam os resultados anteriores. Há muita discussão sobre as possíveis causas da falta de "replicabilidade", incluindo-se aspectos relacinados à viés seletivo, métodos estatísticos inapropriados, bem como uma falta de maior transparência sobre os dados e o processo analítico.
 
-A chamada crise de reprodutibilidade está associada aos casos não tão incomuns de experimentos (área farmacêutica, por exemplo) que são conduzidos para avaliar a eficácia de algum produto e, que, por algum motivo, novos experimentos não confirmam os resultados anteriores. Há muita discussão sobre as possíveis causas dessa falta de "replicabilidade", incluindo-se aspectos relacinados à viés seletivo, métodos estatísticos inapropriados, bem como uma falta de maior transparência sobre os dados e o processo analítico.
+No contexto em que iremos trabalhar, a pesquisa reproduzível (PR), assumindo os mesmos dados e procedimentos, apresenta inúmeras vantagens como dar transparência e confiabilidade à análise, além de permitir que se detectem erros de análise, o que não é incomum. Ela não resolve o problema da crise replicabilidade já que problemas de deficiência ou equívocos em dados ou análise, ou mesmo má conduta científica, podem ocorrer. 
 
-No contexto em que iremos trabalhar, a pesquisa reproduzível (PR), assumindo os mesmos dados e procedimentos, apresenta inúmeras vantagens como dar transparência e confiabilidade à análise, além de permitir que se detectem erros de análise, o que não é incomum. Ela não resolve o problema de replicabilidade já que problemas de deficiência ou equívocos em dados ou análise, ou mesmo má conduta científica, podem ocorrer. No entanto é reconhecido que o uso de boas práticas de PR visam a atender essa demanda por maior transparência na pesquisa. Além disso, permite que os dados gerados pelos pesquisadores não fiquem "engavetados" mas que possam ser reusados ou reanalisados. Atualmente, agências de fomento e a comunidade científia tem exigido ou estimulado que dados e códigos sejam cada vez mais compartilhados e novas ferramentas tem surgido para facilitar esse processo e permitir que pesquisadores obtenham crédito e reconhecimento.
+No entanto é reconhecido que o uso de boas práticas de PR visam a atender essa demanda por maior transparência na pesquisa. Além disso, permite que os dados gerados pelos pesquisadores não fiquem "engavetados" mas que possam ser reusados ou reanalisados. Atualmente, agências de fomento e a comunidade científia tem exigido ou estimulado que dados e códigos sejam cada vez mais compartilhados e novas ferramentas tem surgido para facilitar esse processo e permitir que pesquisadores obtenham crédito e reconhecimento.
 
 
 ## Um projeto reproduzível
@@ -61,7 +42,7 @@ Apender uma rotina de PR é fundamental para:
 Quando não somos treinados a trabalhar seguindo as boas práticas de PR, é muito comum: criar um número grande arquivos e versões desnecessárias que dificultam o processo; gerar inconsistência e redundância nas análises; não ter um controle adequado de versões e dificuldade quando é solicitado o compartilhamento do trabalhos - ou seja, levará um tempo grande só para organizar a "bagunça" que foi gerada durante o processo e que só o próprio pesquisador entende, quando entende! Práticas que deveriam ser simples como refazer um gráfico ou estatísticas após receber os pareceres de revisores se tornam um verdadeiro pesadelo para alguns pesquisadores, o que contribui para o atraso na publicação de artigos.
 
 
-## Ferramentas 
+### Ambiente computacional
 
 Segundo [Yihui Xie](https://yihui.name), um dos principais desenvolvedores do R da empresa RStudio de programas (ex. knitr, rMarkdown, bookdown, etc) que visam facilitar a pesquisa reproduzível:
 
@@ -72,7 +53,7 @@ Dentre os ambientes de programação disponíveis, as ferramentas mais usadas pa
 Além de aprender a utilizar esses programas, é importante que o pesquisador aprenda como usar efetivamente planilhas eletrônicas para reunir e organizar os dados que serão usados na pesquisa. Por princípios, as planilhas eletrônicas como Excel, Libre Office Calc, Numbers e Google Sheets são usadas apenas para armazenar os dados e não para processar, transformar, visualizar ou fazer sumários prévios. O motivo é muito simples: esses procedimentos todos feitos com movimentos de mouse não são reproduzíveis! além disso, na PR os dados originais levantados ou recebidos devem ser mantidos na sua forma original. Caso seja modificado de forma que é mais fácil fazer em uma planilha como renomear variáveis, é importante manter sempre uma planilha não manipulada como referência. 
 
 
-## Compendium da pesquisa
+### Compendium da pesquisa
 
 O termo compêndio de pesquisa ([Research Compendia](https://github.com/ropensci/rrrpkg) foi cunhado em meados dos anos 90.
 
@@ -88,7 +69,7 @@ O objetivo de criar um compêndio de pesquisa é para facilitar a distribuição
 
 Antes de falarmos sobre como organizar o compêndio de pesquisa, veremos aspectos e cuidados específicos de organização dos dados.
 
-## Dados
+### Dados
 
 Segundo Wilkinson et al. (2016), os dados devem ser organizados segundo o princípio **FAIR** = **F**indable, **A**ccessible, **I**nteroperable and **R**eusable. 
 
@@ -100,7 +81,6 @@ Compartilhar os dados (o que pode ser aplicado também aos códigos, significa f
 
 Práticas de compartilhamento de dados talvez ainda não sejam valorizadas pela maioria dos pesquisadores, haja visto que a maioria dos trabalhos ainda não disponibilizam os dados originais. As vantagens óbvias seria a reprodução e possível melhorias na análise, o reuso dos dados em metanálises para chegar a conclusões gerais e gerar novo conhecimento que só é possível com dados compartilhados em larga escala. Mas por que ainda os pesquisadores não compartilham os dados? os motivos podem ser ligados ao receio de perder uma competição por publicações ou mesmo a falta de conhecimento sobre como fazer o compartilhamento. A percepção que domina é que organizar e depositar dados é difícil tecnicamente ou leva muito tempo,
 
-### Metadados
 
 ### Formato
 
@@ -109,9 +89,7 @@ Práticas de compartilhamento de dados talvez ainda não sejam valorizadas pela 
 
 
 
-
 ### Nomes
-
 
 ### Copias
 
@@ -121,11 +99,9 @@ Práticas de compartilhamento de dados talvez ainda não sejam valorizadas pela 
 
 ### Licença
 
+### Criando um compendium
 
-
-## Criando um compendium
-
-### Estrutura
+#### Estrutura
 
 - simples arquivo R comentado
 - Arquivo Rmd (texto, dados e saídas)

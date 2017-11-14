@@ -1,14 +1,17 @@
+@import url('https://fonts.googleapis.com/css?family=Roboto+Condensed:300');
 body {
+font-family: 'Roboto Condensed', sans-serif;
 margin-left:2px;
 margin-right:2px;
-margin-top: 30px;
-font-size: 18px;
-line-height: 1.7
+margin-top: 20px;
+font-size: 19px;
+line-height: 1.6
 }
 
 p {
-line-height:1.75;
-margin-top:20px;
+
+line-height:1.6;
+margin-top:10px;
 margin-bottom:30px;
 margin-left:0px;
 margin-right:0px;
@@ -21,10 +24,22 @@ pre {
   
   
 }
-
-h1, h2, h3,h4 { 
-  padding-bottom: 10px;
-  padding-top: 30px
  
+h1, h2, h3,h4 { 
+  font-family: 'Roboto Condensed', sans-serif;
+  padding-bottom: 10px;
+  padding-top: 20px
+ 
+} 
+ 
+.navbar-default {
+    background-color: #006699;
+
+}
+.list-group-item.active {
+    z-index: 2;
+    color: #ffffff;
+    background-color: #006699;
+    border-color: #006699;
 }
 
