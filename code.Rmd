@@ -1,4 +1,4 @@
-
+% title
 
 
 ## Introduction
@@ -16,39 +16,5 @@ Let's first import the data and load the packages needed for the analyses.
 library(readr)
 fhb_sev <- read_csv("data/fhb_sev.csv")
 fhb_yield <- read_csv("data/fhb_yield.csv")
-```
-
-
-```{r message=FALSE, warning=FALSE, paged.print=FALSE}
-# Load packages 
-library(tidyverse)
-library(metafor)
-library(ggthemes)
-library(cowplot)
-library(scales)
-library(knitr)
-library(nloptr)
-library(minqa)
-library(DT)
-```
-
-
-## Effect-sizes
-
-Here, we used the latter approach fitted directly to the log of the means (for both FHB index and yield) for further obtaining the relative effect (control efficacy and yield response). For yield, we fitted the model directly to the mean yield of treatments to further estimate the yield response, or the difference (D) from using the fungicides. The D was calculated for each treatment within a study for plotting purposes, but the meta-analyitic estimate of D was obtained from the difference of the estimates by mixed model fitted directly to the treatment means.
-
-
-```{r}
-# log of FHB index
-fhb_sev$yi <- log(fhb_sev$sev)
-hist(fhb_sev$yi)
-
-# log of yield
-fhb_yield$yi <- log(fhb_yield$yield)
-hist(fhb_yield$yi)
-
-# difference (D) in yield between treatment and non-treated check
-fhb_yield$D <-fhb_yield$yield - fhb_yield$yield_check
-hist(fhb_yield$D)
 ```
 

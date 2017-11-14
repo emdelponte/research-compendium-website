@@ -1,4 +1,4 @@
-% Quantitative review of the effects of triazole and benzimidazole fungicides on Fusarium head blight and wheat yield in Brazil'
+% Quantitative review of the effects of triazole and benzimidazole fungicides on Fusarium head blight and wheat yield in Brazil
 
 
 ```{r, include=FALSE}
@@ -16,13 +16,6 @@ Corresponding author: E. M. Del Ponte; E-mail: delponte@ufv.br
   
   
 Article published in Phytopathology   
-
-```{r echo=FALSE, message=FALSE, warning=FALSE}
-library(rcrossref)
-citation <- cr_cn(dois = "10.1094/PDIS-03-17-0340-RE", format = "text", style = "apa")
-```
-
-> `r citation`
 
 # Abstract
 

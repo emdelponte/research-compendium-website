@@ -9,9 +9,10 @@
 <meta name="generator" content="pandoc" />
 
 
+<meta name="author" content="Henrique Nunes" />
 
 
-<title>title</title>
+<title>Minicurso R</title>
 
 <script src="site_libs/jquery-1.11.3/jquery.min.js"></script>
 <meta name="viewport" content="width=device-width, initial-scale=1" />
@@ -330,60 +331,16 @@ div.tocify {
 
 
 
-<h1 class="title toc-ignore">title</h1>
+<h1 class="title toc-ignore">Minicurso R</h1>
+<h4 class="author"><em>Henrique Nunes</em></h4>
+<h4 class="date"><em>14 de novembro de 2017</em></h4>
 
 </div>
 
 
-<section id="introduction" class="level2">
-<h2>Introduction</h2>
-<p>We conducted a two-stage multi-treatment or network meta-analysis for the simultaneous analysis of all treatments of interest and which co-occur in the same trial. This approach allows direct comparisons of treatments with each other, and takes into account all the correlations (see Madden et al. 2016 for more details).</p>
-<p>The most common form of effect size used in traditional meta-analysis are based on the contrasts of the treatment of interest with a common reference (e.g. control treatment), such as mean difference, response ratio, etc. This is known as the conditional modeling approach, also named contrast-based meta-analysis. An alternative and simpler approach, which is commonly used in plant pathology, is to fit a two-way linear mixed model directly to the treatment means. This is know as the unconditional modeling approach or arm-based meta-analysis.</p>
-</section>
-<section id="import-data" class="level2">
-<h2>Import data</h2>
-<p>Let’s first import the data and load the packages needed for the analyses.</p>
-<pre class="r"><code>library(readr)
-fhb_sev &lt;- read_csv(&quot;data/fhb_sev.csv&quot;)</code></pre>
-<pre><code>## Warning: Missing column names filled in: &#39;X1&#39; [1]</code></pre>
-<pre><code>## Parsed with column specification:
-## cols(
-##   .default = col_integer(),
-##   cultivar = col_character(),
-##   reaction = col_character(),
-##   location = col_character(),
-##   state = col_character(),
-##   AI = col_character(),
-##   group = col_character(),
-##   yield_check = col_double(),
-##   sev_check = col_double(),
-##   sev = col_double(),
-##   V_sev = col_double(),
-##   publication = col_character(),
-##   mean_trial = col_double()
-## )</code></pre>
-<pre><code>## See spec(...) for full column specifications.</code></pre>
-<pre class="r"><code>fhb_yield &lt;- read_csv(&quot;data/fhb_yield.csv&quot;)</code></pre>
-<pre><code>## Warning: Missing column names filled in: &#39;X1&#39; [1]</code></pre>
-<pre><code>## Parsed with column specification:
-## cols(
-##   .default = col_integer(),
-##   cultivar = col_character(),
-##   reaction = col_character(),
-##   location = col_character(),
-##   state = col_character(),
-##   AI = col_character(),
-##   group = col_character(),
-##   sev_check = col_double(),
-##   yield_check = col_double(),
-##   yield = col_double(),
-##   V_yield = col_double(),
-##   mean_yield = col_double(),
-##   publication = col_character(),
-##   author = col_character()
-## )
-## See spec(...) for full column specifications.</code></pre>
-</section>
+<p>##importando os dados</p>
+<pre class="r"><code>library(readxl)
+batata &lt;- read_xlsx(&quot;batata_2017.xlsx&quot;)</code></pre>
 
 
 

@@ -1,4 +1,4 @@
-name: ''
+name: 'teste'
 output_dir: website
 output:
   html_document:
@@ -9,7 +9,7 @@ output:
     self_contained: no
     highlight: default
     toc: true
-    toc_float: 
+    toc_float:
      collapsed: false
      smooth_scroll: false
 navbar:
@@ -30,4 +30,3 @@ navbar:
   right:
   - icon: fa-github-square
     href: https://github.com/emdelponte/pesquisa-reproduzivel-R
-
