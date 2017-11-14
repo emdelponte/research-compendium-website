@@ -1,0 +1,41 @@
+
+
+```{r, warning=FALSE, include=FALSE}
+
+# Load packages 
+library(tidyverse)
+```
+
+
+## Description
+
+The data, only those for the selected treatments used in this study, are stored in two `csv` files, one for FHB index and the other for yield.  Although FHB index and yield were usually measured in the same plot for the treatment, there were missing records for one or another variables, and some trials reported only disease or yield data. For convenience, these were separated. 
+
+The data is in the tidy (long) format where each row represents a treatment (only treatment means were available in the articles), nested within a trial. Each study (publication) may contain more than one trial. 
+
+## {.tabset}
+### FHB index dataset 
+
+```{r}
+fhb_sev <- read.csv("data/fhb_sev.csv", sep = ",", h = T)
+fhb_sev
+```
+
+### Wheat yield dataset
+
+```{r}
+fhb_yield <- read.csv("data/fhb_yield.csv", sep = ",", h = T)
+fhb_yield
+```
+
+
+## Variables
+The first dozen variables are identifiers for the study, the trials and the fungicide treatments (group, name, n. of sprays, etc.). 
+
+The variables of interest for the meta-analysis are the means of disease index and a metric of sampling variance, which was calculated based on the reported coefficient of variation and overall treatment means for the trial. 
+The `cons_group` variable is a unique identifier for the trial where a specific single or combination of treatments were compared. For example, trials in group 6 tested only Tebuconazole (TEBU) fungicide and those in group 4 compared propiconazole (PROP) and TEBU.
+
+
+
+
+
