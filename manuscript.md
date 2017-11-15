@@ -1,4 +1,4 @@
-% Catchy title for my manuscript
+% Manuscript title
 
 
 Author1, Author2, Author3 
@@ -14,7 +14,7 @@ Article published in Phytopathology
 
 # Abstract
 
-Phasellus mattis mi et erat tristique, sit amet laoreet diam pulvinar. Sed rhoncus vulputate nibh, nec convallis metus viverra ultricies. Vivamus cursus feugiat ante, eget tincidunt dui tempus ac. Suspendisse a tempus leo. Curabitur varius neque finibus tincidunt aliquam. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Mauris eu ligula faucibus, ultricies risus vel, convallis mi. Aenean convallis vitae orci nec sollicitudin. Mauris mollis justo id vehicula elementum. Duis et neque eleifend, auctor ligula id, finibus ligula. Aliquam sagittis mauris a nisl consequat, eu mattis ante ultricies. Sed porttitor consequat placerat. Integer aliquam turpis nec tellus condimentum scelerisque. Nulla maximus metus ligula, sit amet sodales magna pellentesque nec. Cras accumsan pretium lectus a convallis.
+Phasellus mattis mi et erat tristique, sit amet laoreet diam pulvinar. Sed rhoncus vulputate nibh, nec convallis metus viverra ultricies [@Lehner_2016]. Vivamus cursus feugiat ante, eget tincidunt dui tempus ac. Suspendisse a tempus leo. Curabitur varius neque finibus tincidunt aliquam. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Mauris eu ligula faucibus, ultricies risus vel, convallis mi [@Lehner_2016:1]. Aenean convallis vitae orci nec sollicitudin. Mauris mollis justo id vehicula elementum. Duis et neque eleifend, auctor ligula id, finibus ligula. Aliquam sagittis mauris a nisl consequat, eu mattis ante ultricies. Sed porttitor consequat placerat. Integer aliquam turpis nec tellus condimentum scelerisque. Nulla maximus metus ligula, sit amet sodales magna pellentesque nec. Cras accumsan pretium lectus a convallis.
 
 Keywords: Aliquam sagittis mauris 
 

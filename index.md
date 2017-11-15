@@ -1,4 +1,4 @@
-## research-compendium-website
+% About
 
 The goal of *research-compendium-website* is to examine the effects of. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque semper nisl nisi, non porta purus dignissim vel. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. 
 

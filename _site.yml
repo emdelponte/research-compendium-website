@@ -3,7 +3,6 @@ output_dir: docs
 output:
   html_document:
     css: style.css
-    bibliography: crossref.bib
     theme: flatly
     keep_md: true
     df_print: paged
@@ -14,6 +13,8 @@ output:
     toc_float:
      collapsed: false
      smooth_scroll: false
+bibliography: crossref.bib
+csl: chicago-author-date.csl
 navbar:
   title: research-compendium-website
   left:

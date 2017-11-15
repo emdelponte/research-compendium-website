@@ -1,3 +1,4 @@
+% Data 
 ## Raw data 
 
 The data were obtained from / were organized in xx excel/csv files. The file is in the wide format where each day of assessment is in a different column, etc.
@@ -9,19 +10,19 @@ The original files were modified (see this [cheetsheet](https://github.com/rstud
 ## Variable description
 
 - Variable1: 
-  Description 
-  Type: character
-  Unit
+  - Description 
+  - Type: character
+  - Unit
 
 - Variable2: 
-  Description 
-  Type: integer
-  Unit
+  - Description 
+  - Type: integer
+  - Unit
 
 - Variable3: 
-  Description 
-  Type: double
-  Unit:
+  - Description 
+  - Type: double
+  - Unit:
 
 ## Data at a glance
 
