@@ -1,9 +1,11 @@
 name: 'teste'
-output_dir: website
+output_dir: docs
 output:
   html_document:
     css: style.css
+    bibliography: crossref.bib
     theme: flatly
+    keep_md: true
     df_print: paged
     lib_dir: site_libs
     self_contained: no
@@ -13,20 +15,20 @@ output:
      collapsed: false
      smooth_scroll: false
 navbar:
-  title: Pesquisa Reproduzivel no R
+  title: research-compendium-website
   left:
-  - text: Introducao
+  - text: About
     icon: fa fa-home
     href: index.html
-  - text: Datasets
+  - text: Data
     icon: fa fa-table
     href: data.html
-  - text: Data analysis
+  - text: Codes
     icon: fa fa-file-code-o
     href: code.html
   - text: Manuscript
     icon: fa fa-file-text-o
-    href: article.html
+    href: manuscript.html
   right:
   - icon: fa-github-square
-    href: https://github.com/emdelponte/pesquisa-reproduzivel-R
+    href: https://github.com/emdelponte/research-compendium-website

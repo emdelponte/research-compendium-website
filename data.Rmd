@@ -1,23 +1,43 @@
-% title
+## Raw data 
 
+The data were obtained from / were organized in xx excel/csv files. The file is in the wide format where each day of assessment is in a different column, etc.
 
-```{r, warning=FALSE, include=FALSE}
+## Data wrangling
 
-# Load packages 
-library(tidyverse)
+The original files were modified (see this [cheetsheet](https://github.com/rstudio/cheatsheets/raw/master/data-transformation.pdf)) as following. The names of the variables were changed to.. The original wide format was retained and will be transformed using the dplyr functions, etc.
+
+## Variable description
+
+- Variable1: 
+  Description 
+  Type: character
+  Unit
+
+- Variable2: 
+  Description 
+  Type: integer
+  Unit
+
+- Variable3: 
+  Description 
+  Type: double
+  Unit:
+
+## Data at a glance
+
+```{r message=FALSE, warning=FALSE}
+library(readr)
+data <- read_csv2("data/data.csv")
+glimpse(data)
+data
 ```
 
+## Download 
 
-## Description
+The data are deposited in xx public repositories where they can be downloaded. Check on each data repository the policies regarding data use and citation.
 
-The data, only those for the selected treatments used in this study, are stored in two `csv` files, one for FHB index and the other for yield.  Although FHB index and yield were usually measured in the same plot for the treatment, there were missing records for one or another variables, and some trials reported only disease or yield data. For convenience, these were separated. 
+<img src = "https://osf.io/static/img/circle_logo.png" width = "25">
+[](DOI 10.17605/OSF.IO/7D3CH) 
 
-The data is in the tidy (long) format where each row represents a treatment (only treatment means were available in the articles), nested within a trial. Each study (publication) may contain more than one trial. 
 
-## {.tabset}
-### Batata
 
-```{r}
-batata_sev <- read_csv2("data/batata_2017.csv")
-batata_sev
-```
