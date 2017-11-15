@@ -2,7 +2,7 @@
 
 ## Definições
 
-AA Pesquisa Reproduzível (PR) tem a característica de reprodutibilidade, ou seja, a habilidade de um pesquisador em obter os resultados de um estudo prévio usando os mesmos materiais (dados) e métodos (estatística) da pesquisa original. Portanto, a condição *sine qua non* para que isso seja possível é que o pesquisador independente tenha a) acesso aos dados e b) saiba detalhes de como a análise foi feita. 
+A Pesquisa Reproduzível (PR) tem a característica de reprodutibilidade, ou seja, a habilidade de um pesquisador em obter os resultados de um estudo prévio usando os mesmos materiais (dados) e métodos (estatística) da pesquisa original. Portanto, a condição *sine qua non* para que isso seja possível é que o pesquisador independente tenha a) acesso aos dados e b) saiba detalhes de como a análise foi feita. 
 
 Em ciência, essa deve ser uma condição mínima  para que um resultado tenha veracidade. Parte-se do princípio de que os resultados de uma pesquisa quando publicados em revistas científicas com corpo editorial tenham sido obtidos segundo os princípios e a ética científica. No entanto, os editores e revisores, quase sempre, não tem como verificar se todos os passos do trabalho, especialmente a anállise dos dados, foram executados corretamente, já que recebem apenas uma parte do "produto final", ou seja, o artigo científico. Esse deve conter as informações mínimas necessárias descritas de maneira clara o suficiente para que o trabalho seja avaliado pelos pares.
 
