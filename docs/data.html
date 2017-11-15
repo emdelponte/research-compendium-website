@@ -319,6 +319,7 @@ div.tocify {
   <a href="https://github.com/emdelponte/research-compendium-website">
     <span class="fa fa-github-square"></span>
      
+    source code
   </a>
 </li>
       </ul>
@@ -343,6 +344,20 @@ div.tocify {
 <h2>Data wrangling</h2>
 <p>The original files were modified (see this <a href="https://github.com/rstudio/cheatsheets/raw/master/data-transformation.pdf">cheetsheet</a>) as following. The names of the variables were changed to.. The original wide format was retained and will be transformed using the dplyr functions, etc.</p>
 </section>
+<section id="glimpse" class="level2">
+<h2>Glimpse</h2>
+<pre class="r"><code>library(tidyverse)
+data &lt;- read_delim(&quot;data/data.csv&quot;, delim = &quot;;&quot;)
+glimpse(data)</code></pre>
+<pre><code>## Observations: 33
+## Variables: 6
+## $ Dia        &lt;int&gt; 0, 5, 8, 15, 20, 26, 30, 36, 40, 44, 50, 0, 5, 8, 1...
+## $ Tratamento &lt;chr&gt; &quot;Testemunha&quot;, &quot;Testemunha&quot;, &quot;Testemunha&quot;, &quot;Testemun...
+## $ bloco1     &lt;int&gt; 0, 3, 3, 5, 8, 28, 50, 75, 80, 93, 98, 0, 3, 5, 5, ...
+## $ bloco2     &lt;int&gt; 0, 3, 3, 15, 20, 35, 50, 80, 85, 98, 100, 0, 3, 5, ...
+## $ bloco3     &lt;int&gt; 3, 3, 3, 5, 15, 23, 30, 40, 60, 95, 100, 5, 5, 5, 5...
+## $ bloco4     &lt;int&gt; 0, 0, 3, 10, 10, 18, 43, 53, 70, 95, 100, 0, 3, 5, ...</code></pre>
+</section>
 <section id="variable-description" class="level2">
 <h2>Variable description</h2>
 <ul>
@@ -366,19 +381,8 @@ div.tocify {
 </ul></li>
 </ul>
 </section>
-<section id="data-at-a-glance" class="level2">
-<h2>Data at a glance</h2>
-<pre class="r"><code>library(readr)
-data &lt;- read_csv2(&quot;data/data.csv&quot;)
-glimpse(data)</code></pre>
-<pre><code>## Observations: 33
-## Variables: 6
-## $ Dia        &lt;int&gt; 0, 5, 8, 15, 20, 26, 30, 36, 40, 44, 50, 0, 5, 8, 1...
-## $ Tratamento &lt;chr&gt; &quot;Testemunha&quot;, &quot;Testemunha&quot;, &quot;Testemunha&quot;, &quot;Testemun...
-## $ bloco1     &lt;int&gt; 0, 3, 3, 5, 8, 28, 50, 75, 80, 93, 98, 0, 3, 5, 5, ...
-## $ bloco2     &lt;int&gt; 0, 3, 3, 15, 20, 35, 50, 80, 85, 98, 100, 0, 3, 5, ...
-## $ bloco3     &lt;int&gt; 3, 3, 3, 5, 15, 23, 30, 40, 60, 95, 100, 5, 5, 5, 5...
-## $ bloco4     &lt;int&gt; 0, 0, 3, 10, 10, 18, 43, 53, 70, 95, 100, 0, 3, 5, ...</code></pre>
+<section id="quick-view" class="level2">
+<h2>Quick view</h2>
 <pre class="r"><code>data</code></pre>
 <div data-pagedtable="false">
 <script data-pagedtable-source type="application/json">

@@ -4,7 +4,6 @@ output:
   html_document:
     css: style.css
     theme: flatly
-    keep_md: true
     df_print: paged
     lib_dir: site_libs
     self_contained: no
@@ -31,5 +30,6 @@ navbar:
     icon: fa fa-file-text-o
     href: manuscript.html
   right:
-  - icon: fa-github-square
+  - text: source code
+    icon: fa-github-square
     href: https://github.com/emdelponte/research-compendium-website

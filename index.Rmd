@@ -4,11 +4,13 @@ The goal of *research-compendium-website* is to examine the effects of. Lorem ip
 
 ## Project team
 
-Project PI: 
+Project PI:
+
 - PI name
-Institution
+- Institution
 
 Members:
+
 - Member 1
 - Member 2
 - Member 3
@@ -20,7 +22,7 @@ Considerations about study design, randomization, factors, response variables, e
 
 ## Citation
 
-Please cite this compendium as:  
+Please cite this research compendium as:  
 
 > Authors, (r format(Sys.Date(), "%Y")). Title of compendium. Accessed r format(Sys.Date(), "%d %b %Y"). Online at https://doi.org/xxx/xxx
 

@@ -7,6 +7,14 @@ The data were obtained from / were organized in xx excel/csv files. The file is 
 
 The original files were modified (see this [cheetsheet](https://github.com/rstudio/cheatsheets/raw/master/data-transformation.pdf)) as following. The names of the variables were changed to.. The original wide format was retained and will be transformed using the dplyr functions, etc.
 
+## Glimpse 
+
+```{r message=FALSE, warning=FALSE}
+library(tidyverse)
+data <- read_delim("data/data.csv", delim = ";")
+glimpse(data)
+```
+
 ## Variable description
 
 - Variable1: 
@@ -23,15 +31,13 @@ The original files were modified (see this [cheetsheet](https://github.com/rstud
   - Description 
   - Type: double
   - Unit:
+  
+## Quick view
 
-## Data at a glance
-
-```{r message=FALSE, warning=FALSE}
-library(readr)
-data <- read_csv2("data/data.csv")
-glimpse(data)
+```{r}
 data
 ```
+
 
 ## Download 
 
