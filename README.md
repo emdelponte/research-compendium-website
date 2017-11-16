@@ -8,7 +8,7 @@ Emerson Del Ponte (delponte@ufv.br)
 
 # Overview of contents
 
-The root of the repository contains files that set website structure and style parameters (`.yml`, `.css`) and citations/references styel. There are four `.Rmd` files that access data and generates the website, which are separated according to the convention of a research compendium.
+The root of the repository contains files that set website structure and style parameters (`.yml`, `.css`) and citations/references style. There are four `.Rmd` files that access data and generates the website, which are separated according to the convention of a research compendium.
 
 - `index.Rmd`:
 - `data.Rmd`: 
@@ -26,7 +26,7 @@ There are two folders
 
 Manuscript: [CC-BY-4.0](https://creativecommons.org/licenses/by/4.0/)
 
-Code: MIT year: r format(Sys.Date(), "%Y"), copyright holder: Emerson Del Ponte
+Code: MIT year: `r format(Sys.Date(), "%Y")`, copyright holder: Emerson Del Ponte
 
 Data: CC-0 attribution requested in reuse
 
