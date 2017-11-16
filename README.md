@@ -26,7 +26,7 @@ There are two folders
 
 Manuscript: [CC-BY-4.0](https://creativecommons.org/licenses/by/4.0/)
 
-Code: MIT year: `r format(Sys.Date(), "%Y")`, copyright holder: Emerson Del Ponte
+Code: MIT year: 2017, copyright holder: Emerson Del Ponte
 
 Data: CC-0 attribution requested in reuse
 
