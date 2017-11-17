@@ -2,6 +2,7 @@
 
 This repository contains the development version of RMarkdown code and data example files to customize and generate a responsive website for a research compendium - a compilation of data and computer code to reproduce the results of a publication. 
 
+
 # Authors of this repository
 
 Emerson Del Ponte (delponte@ufv.br)
@@ -30,7 +31,18 @@ Code: [MIT](https://opensource.org/licenses/MIT) year: 2017, copyright holder: E
 
 Data: [CC-0[(https://creativecommons.org/publicdomain/zero/1.0/)] attribution requested in reuse
 
-Contact
+# Credits
+
+This compendium was developed based on the ideas and examples in a few resources which suggest a research compendium structured as an R package. However, this is not an R package as I focused mainly on four main Rmd files that are used to generatethe html output of the compendium. There is clear separation of the data and the output files.
+
+[Marwick et al. 2017](https://doi.org/10.7287/peerj.preprints.3192v1)
+[jhollist manuscriptpackage](https://github.com/jhollist/manuscriptPackage)
+[cboettig template](https://github.com/cboettig/template)
+[benmarwick researchcompendium](https://github.com/benmarwick/researchcompendium)
+[Reproducibility_in_Plant_Pathology](Reproducibility_in_Plant_Pathology)
+[R for Data Science](http://r4ds.had.co.nz/)
+
+# Contact
 
 Emerson Del Ponte, Associate Professor, Departmento de Fitopatologia, Universidade Federal de Viçosa, Viçosa, MG Brazil
 (+55) 31 38991103 
