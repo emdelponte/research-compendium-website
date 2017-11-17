@@ -13,7 +13,7 @@ The root of the repository contains files that set the website structure (menus,
 
 - `index.Rmd`: Describe the research, objectives, authorship, etc.
 - `data.Rmd`: Contains the raw or raw-derived data.
-- `code.Rmd`: Produces the main analysis report with a template that follows the Wickham and Grolemund's [model for a data science project{(http://r4ds.had.co.nz/introduction.html):  import -> tidy -> Transform-visualize-model -> communicate 
+- `code.Rmd`: Produces the main analysis report with a template that follows the Wickham and Grolemund's [model for a data science project](http://r4ds.had.co.nz/introduction.html):  import -> tidy -> Transform-visualize-model -> communicate 
 - `manuscript.Rmd`: An example manuscript template to display in the website. It may work as a pre-print version of the paper. 
 
 There are three basic folders:
