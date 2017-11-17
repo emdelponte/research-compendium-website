@@ -8,6 +8,8 @@ output:
     lib_dir: site_libs
     self_contained: no
     highlight: default
+    include:
+      after_body: footer.md
     toc: true
     toc_float:
      collapsed: false
@@ -30,6 +32,6 @@ navbar:
     icon: fa fa-file-text-o
     href: manuscript.html
   right:
-  - text: source code
+  - text: source
     icon: fa-github-square
     href: https://github.com/emdelponte/research-compendium-website

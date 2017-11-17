@@ -1,11 +1,12 @@
 % Data 
+
 ## Raw data 
 
-The data were obtained from / were organized in xx excel/csv files. The file is in the wide format where each day of assessment is in a different column, etc.
+The data were obtained from xx and were organized in xx excel/csv files. The file is in the wide format where each day of assessment is in a different column, etc.
 
 ## Data wrangling
 
-The original files were modified (see this [cheetsheet](https://github.com/rstudio/cheatsheets/raw/master/data-transformation.pdf)) as following. The names of the variables were changed to.. The original wide format was retained and will be transformed using the dplyr functions, etc.
+The original files were modified as following. The names of the variables were changed to.. The original wide format was retained and will be transformed using the dplyr functions, etc.
 
 ## Glimpse 
 

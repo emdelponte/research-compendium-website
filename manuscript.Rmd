@@ -1,5 +1,5 @@
 ---
-title: "My manuscript"
+title: "My catchy title for a manuscript"
 bibliography: crossref.bib
 csl: chicago-author-date.csl
 ---
@@ -83,5 +83,7 @@ Cras id sem augue. Nullam tincidunt vulputate arcu in dignissim. Vivamus gravida
 
 # Acknowledgements 
 
+ Fusce quis hendrerit libero, id auctor quam. Duis et vestibulum mauris. Maecenas sagittis condimentum laoreet. Donec vitae lectus eu erat hendrerit facilisis sed eget sem. Nam interdum libero ac ex cursus suscipit.
 
 # References
+

@@ -7,6 +7,8 @@ In this analyis..
 
 ## Load packages
 
+The packages necessary for this analysis..
+
 ```{r}
 library(readr)
 ```
@@ -14,7 +16,7 @@ library(readr)
 
 ## Import data
 
-Let's first import the data and load the packages needed for the analyses.
+Let's first import the data. 
 
 ```{r}
 data <- read_csv2("data/data.csv")
@@ -23,16 +25,19 @@ data
 
 ## Data transformation
 
-
+We need to do some transformations.
 
 ## Data visualization
 
+Produce some plots to understand the data
 
 ## Data analysis
 
+Modeling
 
 ## Manuscript-ready plots
 
+This could be here or in a separate webpage.
 
 
 

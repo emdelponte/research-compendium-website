@@ -1,4 +1,6 @@
 @import url('https://fonts.googleapis.com/css?family=Roboto+Condensed:300');
+@import url('https://fonts.googleapis.com/css?family=Oswald');
+
 body {
 font-family: 'Roboto Condensed', sans-serif;
 margin-left:2px;
@@ -24,9 +26,10 @@ pre {
 }
  
 h1, h2, h3,h4 { 
-  font-family: 'Roboto Condensed', sans-serif;
+  font-family: 'Oswald', sans-serif;
   padding-bottom: 10px;
-  padding-top: 20px
+  padding-top: 20px;
+  color: #4682b4;
  
 } 
  
