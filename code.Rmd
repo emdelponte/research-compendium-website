@@ -18,8 +18,8 @@ library(readr)
 
 Let's first import the data. 
 
-```{r}
-data <- read_csv2("data/data.csv")
+```{r message=FALSE, warning=FALSE}
+data <- read_delim("data/data.csv", delim = ";")
 data
 ```
 
