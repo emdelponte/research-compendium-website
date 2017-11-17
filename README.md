@@ -13,14 +13,14 @@ The root of the repository contains files that set the website structure (menus,
 
 - `index.Rmd`: Describe the research, objectives, authorship, etc.
 - `data.Rmd`: Contains the raw or raw-derived data.
-- `code.Rmd`: Produces the main analysis report with a template that follows the Wickham and Grolemund's [model for a data science project](http://r4ds.had.co.nz/introduction.html):  import -> tidy -> Transform-visualize-model -> communicate 
-- `manuscript.Rmd`: An example manuscript template to display in the website. It may work as a pre-print version of the paper. 
+- `code.Rmd`: Produces the main analysis report with a template that follows the Wickham and Grolemund's [model for a data science project](http://r4ds.had.co.nz/introduction.html):  import -> tidy -> transform-visualize-model -> communicate 
+- `manuscript.Rmd`: An example html manuscript template. It is intended to work as a pre-print version of the paper. 
 
 There are three basic folders:
 
-- `data/` - contains all the raw and further processed data.
-- `docs/` - contains the renderized html files of the research compendia with all text and figures
-- `supp/` - contains supplementary files that are not data or R codes.
+- `data/` - raw and further processed data.
+- `docs/` - html files of the research compendia with all text and figures.
+- `supp/` - supplementary files that are not data or R codes.
 
 
 # Licenses
@@ -33,7 +33,7 @@ Data: [CC-0[(https://creativecommons.org/publicdomain/zero/1.0/)] attribution re
 
 # Credits
 
-This compendium was developed based on the ideas and examples in a few resources which suggest a research compendium structured as an R package. However, this is not an R package as I focused mainly on four main Rmd files that are used to generatethe html output of the compendium. There is clear separation of the data and the output files.
+This compendium was developed based on the ideas and examples in other resources which suggest a research compendium structured as an R package. However, this is not an R package as I focused mainly on four main Rmd files that are used to generatethe html output of the compendium, but there there is clear separation of the data and the output files.
 
 [Marwick et al. 2017](https://doi.org/10.7287/peerj.preprints.3192v1)
 [jhollist manuscriptpackage](https://github.com/jhollist/manuscriptPackage)
