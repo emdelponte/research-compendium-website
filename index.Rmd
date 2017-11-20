@@ -1,6 +1,6 @@
 % About
 
-The goal of *research-compendium-website* is to examine the effects of.. This is part of a MSc/PhD study by.. Our collaborators are from the following institute.
+The goal of this research is to examine the effects of.. This is part of a MSc/PhD study by.. Our collaborators are from the following institutes, etc.
 
 ## Project team
 
@@ -17,7 +17,7 @@ Members:
 
 ## Methodology
 
-Considerations about study design, randomization, factors, response variables, etc.
+Considerations about sampling, study design, randomization, factors, response variables, etc.
 
 
 ## Citation

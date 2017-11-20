@@ -2,7 +2,7 @@
 
 ## Raw data 
 
-The data were obtained from xx and were organized in xx excel/csv files. The file is in the wide format where each day of assessment is in a different column, etc.
+The data were obtained from xx and were organized in xx excel/csv files. The example file is in the wide format where each day of assessment is in a different column, etc.
 
 ## Data wrangling
 
@@ -16,7 +16,7 @@ data <- read_delim("data/data.csv", delim = ";")
 glimpse(data)
 ```
 
-## Variable description
+## Description of variables
 
 - Variable1: 
   - Description 
@@ -33,7 +33,7 @@ glimpse(data)
   - Type: double
   - Unit:
   
-## Quick view
+## Quick view 
 
 ```{r}
 data

@@ -2,7 +2,7 @@
 
 ## Introduction
 
-In this analyis..
+In this analysis.. 
 
 
 ## Load packages
@@ -14,7 +14,7 @@ library(readr)
 ```
 
 
-## Import data
+## Data import
 
 Let's first import the data. 
 
@@ -23,9 +23,13 @@ data <- read_delim("data/data.csv", delim = ";")
 data
 ```
 
+## Data tidy
+
+Data wrangling here.
+
 ## Data transformation
 
-We need to do some transformations.
+We need to do some transformations, create new variables, etc.
 
 ## Data visualization
 
@@ -37,7 +41,7 @@ Modeling
 
 ## Manuscript-ready plots
 
-This could be here or in a separate webpage.
+This could be shown here or in a separate webpage.
 
 
 

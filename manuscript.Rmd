@@ -13,7 +13,7 @@ Author1, Author2, Author3
 Corresponding author: Author 1
   
   
-Article published in Phytopathology   
+Article published in ...reference, link, DOI
 
 # Abstract
 
@@ -21,13 +21,8 @@ Phasellus mattis mi et erat tristique, sit amet laoreet diam pulvinar. Sed rhonc
 
 Keywords: Aliquam sagittis mauris 
 
-```{r}
-library(citr)
-```
-
 
 # Introduction
-
 
 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut vehicula risus nec libero imperdiet fermentum. Maecenas convallis libero condimentum finibus euismod. Nunc lacinia, leo et sagittis posuere, augue sapien molestie lacus, ut imperdiet velit sem et nunc. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam euismod lorem vitae consequat congue. Donec bibendum, nulla et venenatis tincidunt, nulla quam hendrerit lorem, nec semper nunc tortor sit amet dui. Maecenas sit amet laoreet sem.
 
