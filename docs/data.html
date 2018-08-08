@@ -27,7 +27,9 @@
 <script src="site_libs/highlightjs-9.12.0/highlight.js"></script>
 <link href="site_libs/pagedtable-1.1/css/pagedtable.css" rel="stylesheet" />
 <script src="site_libs/pagedtable-1.1/js/pagedtable.js"></script>
-<link href="site_libs/font-awesome-4.5.0/css/font-awesome.min.css" rel="stylesheet" />
+<link href="site_libs/font-awesome-5.0.13/css/fa-svg-with-js.css" rel="stylesheet" />
+<script src="site_libs/font-awesome-5.0.13/js/fontawesome-all.min.js"></script>
+<script src="site_libs/font-awesome-5.0.13/js/fa-v4-shims.min.js"></script>
 
 <style type="text/css">code{white-space: pre;}</style>
 <style type="text/css">
@@ -40,7 +42,7 @@ if (window.hljs) {
   hljs.configure({languages: []});
   hljs.initHighlightingOnLoad();
   if (document.readyState && document.readyState === "complete") {
-    window.setTimeout(function() { hljs.initHighlightingOnLoad(); }, 0);
+    window.setTimeout(function() { hljs.initHighlighting(); }, 0);
   }
 }
 </script>
@@ -74,7 +76,7 @@ h6 {
 }
 </style>
 
-<link rel="stylesheet" href="style.css" />
+<link rel="stylesheet" href="style.css" type="text/css" />
 
 </head>
 
@@ -96,6 +98,9 @@ img {
 }
 .tabbed-pane {
   padding-top: 12px;
+}
+.html-widget {
+  margin-bottom: 20px;
 }
 button.code-folding-btn:focus {
   outline: none;
@@ -336,15 +341,15 @@ div.tocify {
 </div>
 
 
-<section id="raw-data" class="level2">
+<div id="raw-data" class="section level2">
 <h2>Raw data</h2>
 <p>The data were obtained from xx and were organized in xx excel/csv files. The example file is in the wide format where each day of assessment is in a different column, etc.</p>
-</section>
-<section id="data-wrangling" class="level2">
+</div>
+<div id="data-wrangling" class="section level2">
 <h2>Data wrangling</h2>
 <p>The original files were modified as following. The names of the variables were changed to.. The original wide format was retained and will be transformed using the dplyr functions, etc.</p>
-</section>
-<section id="glimpse" class="level2">
+</div>
+<div id="glimpse" class="section level2">
 <h2>Glimpse</h2>
 <pre class="r"><code>library(tidyverse)
 data &lt;- read_delim(&quot;data/data.csv&quot;, delim = &quot;;&quot;)
@@ -357,31 +362,25 @@ glimpse(data)</code></pre>
 ## $ bloco2     &lt;int&gt; 0, 3, 3, 15, 20, 35, 50, 80, 85, 98, 100, 0, 3, 5, ...
 ## $ bloco3     &lt;int&gt; 3, 3, 3, 5, 15, 23, 30, 40, 60, 95, 100, 5, 5, 5, 5...
 ## $ bloco4     &lt;int&gt; 0, 0, 3, 10, 10, 18, 43, 53, 70, 95, 100, 0, 3, 5, ...</code></pre>
-</section>
-<section id="description-of-variables" class="level2">
+</div>
+<div id="description-of-variables" class="section level2">
 <h2>Description of variables</h2>
 <ul>
-<li>Variable1:
-<ul>
+<li>Variable1:</li>
 <li>Description</li>
 <li>Type: character</li>
-<li>Unit</li>
-</ul></li>
-<li>Variable2:
-<ul>
+<li><p>Unit</p></li>
+<li>Variable2:</li>
 <li>Description</li>
 <li>Type: integer</li>
-<li>Unit</li>
-</ul></li>
-<li>Variable3:
-<ul>
+<li><p>Unit</p></li>
+<li>Variable3:</li>
 <li>Description</li>
 <li>Type: double</li>
-<li>Unit:</li>
-</ul></li>
+<li><p>Unit:</p></li>
 </ul>
-</section>
-<section id="quick-view" class="level2">
+</div>
+<div id="quick-view" class="section level2">
 <h2>Quick view</h2>
 <pre class="r"><code>data</code></pre>
 <div data-pagedtable="false">
@@ -389,12 +388,12 @@ glimpse(data)</code></pre>
 {"columns":[{"label":["Dia"],"name":[1],"type":["int"],"align":["right"]},{"label":["Tratamento"],"name":[2],"type":["chr"],"align":["left"]},{"label":["bloco1"],"name":[3],"type":["int"],"align":["right"]},{"label":["bloco2"],"name":[4],"type":["int"],"align":["right"]},{"label":["bloco3"],"name":[5],"type":["int"],"align":["right"]},{"label":["bloco4"],"name":[6],"type":["int"],"align":["right"]}],"data":[{"1":"0","2":"Testemunha","3":"0","4":"0","5":"3","6":"0"},{"1":"5","2":"Testemunha","3":"3","4":"3","5":"3","6":"0"},{"1":"8","2":"Testemunha","3":"3","4":"3","5":"3","6":"3"},{"1":"15","2":"Testemunha","3":"5","4":"15","5":"5","6":"10"},{"1":"20","2":"Testemunha","3":"8","4":"20","5":"15","6":"10"},{"1":"26","2":"Testemunha","3":"28","4":"35","5":"23","6":"18"},{"1":"30","2":"Testemunha","3":"50","4":"50","5":"30","6":"43"},{"1":"36","2":"Testemunha","3":"75","4":"80","5":"40","6":"53"},{"1":"40","2":"Testemunha","3":"80","4":"85","5":"60","6":"70"},{"1":"44","2":"Testemunha","3":"93","4":"98","5":"95","6":"95"},{"1":"50","2":"Testemunha","3":"98","4":"100","5":"100","6":"100"},{"1":"0","2":"MM","3":"0","4":"0","5":"5","6":"0"},{"1":"5","2":"MM","3":"3","4":"3","5":"5","6":"3"},{"1":"8","2":"MM","3":"5","4":"5","5":"5","6":"5"},{"1":"15","2":"MM","3":"5","4":"5","5":"5","6":"5"},{"1":"20","2":"MM","3":"5","4":"5","5":"5","6":"5"},{"1":"26","2":"MM","3":"15","4":"5","5":"5","6":"5"},{"1":"30","2":"MM","3":"20","4":"5","5":"5","6":"5"},{"1":"36","2":"MM","3":"20","4":"8","5":"5","6":"5"},{"1":"40","2":"MM","3":"20","4":"10","5":"5","6":"5"},{"1":"44","2":"MM","3":"21","4":"12","5":"13","6":"15"},{"1":"50","2":"MM","3":"23","4":"15","5":"20","6":"20"},{"1":"0","2":"M","3":"1","4":"0","5":"0","6":"0"},{"1":"5","2":"M","3":"1","4":"3","5":"2","6":"3"},{"1":"8","2":"M","3":"3","4":"5","5":"4","6":"4"},{"1":"15","2":"M","3":"5","4":"10","5":"5","6":"8"},{"1":"20","2":"M","3":"6","4":"13","5":"10","6":"8"},{"1":"26","2":"M","3":"21","4":"20","5":"14","6":"11"},{"1":"30","2":"M","3":"35","4":"28","5":"18","6":"24"},{"1":"36","2":"M","3":"48","4":"43","5":"23","6":"26"},{"1":"40","2":"M","3":"50","4":"48","5":"33","6":"38"},{"1":"44","2":"M","3":"57","4":"55","5":"54","6":"55"},{"1":"50","2":"M","3":"61","4":"58","5":"60","6":"60"}],"options":{"columns":{"min":{},"max":[10]},"rows":{"min":[10],"max":[10]},"pages":{}}}
   </script>
 </div>
-</section>
-<section id="download" class="level2">
+</div>
+<div id="download" class="section level2">
 <h2>Download</h2>
 <p>The data are deposited in xx public repositories where they can be downloaded. Check on each data repository the policies regarding data use and citation.</p>
 <p><img src = "https://osf.io/static/img/circle_logo.png" width = "25"> <a href="DOI%2010.17605/OSF.IO/7D3CH"></a></p>
-</section>
+</div>
 
 
 
