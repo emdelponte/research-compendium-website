@@ -27,7 +27,9 @@
 <script src="site_libs/highlightjs-9.12.0/highlight.js"></script>
 <link href="site_libs/pagedtable-1.1/css/pagedtable.css" rel="stylesheet" />
 <script src="site_libs/pagedtable-1.1/js/pagedtable.js"></script>
-<link href="site_libs/font-awesome-4.5.0/css/font-awesome.min.css" rel="stylesheet" />
+<link href="site_libs/font-awesome-5.0.13/css/fa-svg-with-js.css" rel="stylesheet" />
+<script src="site_libs/font-awesome-5.0.13/js/fontawesome-all.min.js"></script>
+<script src="site_libs/font-awesome-5.0.13/js/fa-v4-shims.min.js"></script>
 
 <style type="text/css">code{white-space: pre;}</style>
 <style type="text/css">
@@ -40,7 +42,7 @@ if (window.hljs) {
   hljs.configure({languages: []});
   hljs.initHighlightingOnLoad();
   if (document.readyState && document.readyState === "complete") {
-    window.setTimeout(function() { hljs.initHighlightingOnLoad(); }, 0);
+    window.setTimeout(function() { hljs.initHighlighting(); }, 0);
   }
 }
 </script>
@@ -74,7 +76,7 @@ h6 {
 }
 </style>
 
-<link rel="stylesheet" href="style.css" />
+<link rel="stylesheet" href="style.css" type="text/css" />
 
 </head>
 
@@ -96,6 +98,9 @@ img {
 }
 .tabbed-pane {
   padding-top: 12px;
+}
+.html-widget {
+  margin-bottom: 20px;
 }
 button.code-folding-btn:focus {
   outline: none;
@@ -337,12 +342,12 @@ div.tocify {
 
 
 <p>The goal of this research is to examine the effects of.. This is part of a MSc/PhD study by.. Our collaborators are from the following institutes, etc.</p>
-<section id="project-team" class="level2">
+<div id="project-team" class="section level2">
 <h2>Project team</h2>
 <p>Project PI:</p>
 <ul>
-<li>PI name</li>
-<li>Institution</li>
+<li>Adam Sparks</li>
+<li>University of Southern Queensland</li>
 </ul>
 <p>Members:</p>
 <ul>
@@ -350,31 +355,31 @@ div.tocify {
 <li>Member 2</li>
 <li>Member 3</li>
 </ul>
-</section>
-<section id="methodology" class="level2">
+</div>
+<div id="methodology" class="section level2">
 <h2>Methodology</h2>
 <p>Considerations about sampling, study design, randomization, factors, response variables, etc.</p>
-</section>
-<section id="citation" class="level2">
+</div>
+<div id="citation" class="section level2">
 <h2>Citation</h2>
 <p>Please cite this research compendium as:</p>
 <blockquote>
 <p>Authors, . Title of compendium. Online at <a href="https://doi.org/xxx/xxx" class="uri">https://doi.org/xxx/xxx</a></p>
 </blockquote>
-</section>
-<section id="licences" class="level2">
+</div>
+<div id="licences" class="section level2">
 <h2>Licences</h2>
 <p>Data: <a href="https://creativecommons.org/publicdomain/zero/1.0/">CC-0</a> attribution requested in reuse Manuscript: <a href="https://creativecommons.org/licenses/by/4.0/">CC-BY-4.0</a><br />
 Code: <a href="https://opensource.org/licenses/MIT">MIT</a> year: 2017, copyright holder: Emerson Del Ponte</p>
-</section>
-<section id="contributions" class="level2">
+</div>
+<div id="contributions" class="section level2">
 <h2>Contributions</h2>
 <p>We welcome contributions from everyone. Before you get started, please see our <a href="CONTRIBUTING.html">contributor guidelines</a>. Please note that this project is released with a <a href="CONDUCT.html">Contributor Code of Conduct</a>. By participating in this project you agree to abide by its terms.</p>
-</section>
+</div>
 
 
 
-Copyright 2017 Emerson Del Ponte
+Copyright 2018 Adam H Sparks
 
 
 </div>

@@ -1,3 +1,3 @@
 
 
-Copyright 2017 Emerson Del Ponte
+Copyright 2018 Adam H Sparks
