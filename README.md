@@ -34,7 +34,7 @@ Data: [CC-0[(https://creativecommons.org/publicdomain/zero/1.0/)] attribution re
 
 # Credits
 
-This compendium was developed based on the ideas and examples in other resources which suggest a research compendium structured as an R package. However, this is not an R package as I focused mainly on four main Rmd files that are used to generatethe html output of the compendium, but there there is clear separation of the data and the output files.
+This compendium was developed based on the ideas and examples in other resources which suggest a research compendium structured as an R package. However, this is not an R package as I focused mainly on four main Rmd files that are used to generate the html output of the compendium, but there there is clear separation of the data and the output files.
 
 [Marwick et al. 2017](https://doi.org/10.7287/peerj.preprints.3192v1)
 
