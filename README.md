@@ -23,6 +23,9 @@ There are three basic folders:
 - `docs/` - html files of the research compendia with all text and figures.
 - `supp/` - supplementary files that are not data or R codes.
 
+# Copying this compendium template
+
+Use [GitHub import](https://github.com/new/import), *don't fork*, to make a copy of this repo in your own GitHub account. (**Note:** This is like a GitHub Fork, but not connected to the upstream changes so you won't see `forked from emdelponte/research-compendium-website` in your own repository or other information like `This branch is 117 commits ahead of emdelponte:master` also won't appear in your repository, which makes things nicer since this is just a template for your own compendium. They don't need to be linked.
 
 # Licenses
 
